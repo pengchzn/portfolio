@@ -1,12 +1,20 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import { getSiteConfig } from './config'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Luoshen - Portfolio',
-  description: 'Welcome to my personal portfolio',
+export function generateMetadata(): Metadata {
+  const { meta } = getSiteConfig()
+  return {
+    title: meta.title,
+    description: meta.description,
+    keywords: meta.keywords,
+    openGraph: {
+      images: [meta.ogImage],
+    },
+  }
 }
 
 export default function RootLayout({
@@ -16,7 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} min-h-screen`}>
+        {children}
+      </body>
     </html>
   )
 }

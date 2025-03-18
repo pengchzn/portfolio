@@ -1,34 +1,10 @@
 'use client'
 import { motion } from 'framer-motion'
 import { FiExternalLink, FiGithub } from 'react-icons/fi'
+import { getProjectsConfig } from '../config'
 
 export default function Projects() {
-  const projects = [
-    {
-      title: 'AI Chatbot Platform',
-      description: 'An intelligent conversational AI platform built with Next.js and OpenAI API, featuring real-time responses and conversation history.',
-      tags: ['Next.js', 'OpenAI', 'TypeScript', 'Tailwind CSS'],
-      image: '/project1.png',
-      github: '#',
-      demo: '#'
-    },
-    {
-      title: 'E-commerce Dashboard',
-      description: 'A comprehensive dashboard for managing online store operations, featuring real-time analytics and inventory management.',
-      tags: ['React', 'Node.js', 'MongoDB', 'Docker'],
-      image: '/project2.png',
-      github: '#',
-      demo: '#'
-    },
-    {
-      title: 'Task Management System',
-      description: 'A collaborative task management solution with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      tags: ['React', 'Firebase', 'Material-UI', 'TypeScript'],
-      image: '/project3.png',
-      github: '#',
-      demo: '#'
-    }
-  ]
+  const projects = getProjectsConfig().filter(project => project.featured)
 
   return (
     <section id="projects" className="py-20">
@@ -44,7 +20,7 @@ export default function Projects() {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            A showcase of my recent work and technical projects
+            A selection of my featured projects and technical accomplishments
           </p>
         </motion.div>
 
@@ -58,8 +34,15 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <div className="glass-effect rounded-lg overflow-hidden">
-                <div className="relative h-48 bg-gray-800">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-50" />
+                <div 
+                  className="relative h-48 bg-cover bg-center"
+                  style={{ 
+                    backgroundImage: `url(${project.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-75" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <h3 className="text-2xl font-bold text-white">{project.title}</h3>
                   </div>

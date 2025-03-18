@@ -1,36 +1,40 @@
 'use client'
 import { motion } from 'framer-motion'
-import { FiMail, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi'
+import { FiMail, FiGithub, FiLinkedin, FiTwitter, FiInstagram } from 'react-icons/fi'
+import { getUserConfig, getSocialConfig } from '../config'
 
 export default function Contact() {
+  const user = getUserConfig()
+  const social = getSocialConfig()
+
   const contactMethods = [
     {
       icon: <FiMail size={24} />,
       title: 'Email',
       description: 'Let\'s discuss your project',
       action: 'Send a message',
-      link: 'mailto:your.email@example.com'
+      link: `mailto:${user.email}`
     },
     {
       icon: <FiGithub size={24} />,
       title: 'GitHub',
       description: 'Check out my repositories',
       action: 'View Profile',
-      link: '#'
+      link: social.github
     },
     {
       icon: <FiLinkedin size={24} />,
       title: 'LinkedIn',
       description: 'Let\'s connect professionally',
       action: 'Connect',
-      link: '#'
+      link: social.linkedin
     },
     {
-      icon: <FiTwitter size={24} />,
-      title: 'Twitter',
-      description: 'Follow me for updates',
+      icon: <FiInstagram size={24} />,
+      title: 'Instagram',
+      description: 'Follow my journey',
       action: 'Follow',
-      link: '#'
+      link: social.instagram
     }
   ]
 
@@ -115,7 +119,7 @@ export default function Contact() {
           className="mt-16 text-center"
         >
           <p className="text-gray-300">
-            Based in <span className="text-white font-medium">San Francisco, CA</span>
+            Based in <span className="text-white font-medium">{user.location}</span>
           </p>
         </motion.div>
       </div>

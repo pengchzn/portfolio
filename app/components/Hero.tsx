@@ -1,12 +1,17 @@
 'use client'
 import { motion } from 'framer-motion'
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiMail, FiInstagram } from 'react-icons/fi'
+import { getUserConfig, getSocialConfig } from '../config'
 
 export default function Hero() {
+  const user = getUserConfig()
+  const social = getSocialConfig()
+  
   const socialLinks = [
-    { icon: <FiGithub size={24} />, url: '#', label: 'GitHub' },
-    { icon: <FiLinkedin size={24} />, url: '#', label: 'LinkedIn' },
-    { icon: <FiMail size={24} />, url: '#', label: 'Email' },
+    { icon: <FiGithub size={24} />, url: social.github, label: 'GitHub' },
+    { icon: <FiLinkedin size={24} />, url: social.linkedin, label: 'LinkedIn' },
+    { icon: <FiMail size={24} />, url: `mailto:${user.email}`, label: 'Email' },
+    { icon: <FiInstagram size={24} />, url: social.instagram, label: 'Instagram' },
   ]
 
   return (
@@ -20,7 +25,7 @@ export default function Hero() {
             className="floating"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Hi, I'm <span className="gradient-text">Luoshen</span>
+              Hi, I'm <span className="gradient-text">{user.name}</span>
             </h1>
           </motion.div>
 
@@ -30,7 +35,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl"
           >
-            A passionate software engineer dedicated to crafting elegant solutions through code
+            {user.bio}
           </motion.p>
 
           <motion.div

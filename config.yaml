@@ -59,7 +59,9 @@ skills:
 
     - name: "Next.js"
       icon: "SiNextdotjs"
-      color: "text-white"
+      color:
+        light: "text-gray-900"
+        dark: "text-white"
       level: 85
 
     - name: "Python"
@@ -81,8 +83,13 @@ skills:
 # Site Configuration
 site:
   theme:
-    primary: "#00DC82"
-    secondary: "#36E4DA"
+    gradients:
+      light:
+        from: "#4F46E5"  # indigo-600
+        to: "#06B6D4"    # cyan-600
+      dark:
+        from: "#00DC82"  # green
+        to: "#36E4DA"    # cyan
     background: "#000000"
     text: "#FFFFFF"
     

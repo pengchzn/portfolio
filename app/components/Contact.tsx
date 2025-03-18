@@ -70,7 +70,7 @@ export default function Contact() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             Have a project in mind? Let's create something amazing together
           </p>
         </motion.div>
@@ -97,10 +97,10 @@ export default function Contact() {
                 {method.icon}
               </motion.div>
               <h3 className="text-xl font-semibold mb-2">{method.title}</h3>
-              <p className="text-gray-300 mb-4">{method.description}</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">{method.description}</p>
               <motion.a
                 href={method.link}
-                className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+                className="inline-flex items-center space-x-2 text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 transition-colors duration-200"
                 whileHover={{ x: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -118,8 +118,8 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <p className="text-gray-300">
-            Based in <span className="text-white font-medium">{user.location}</span>
+          <p className="text-gray-600 dark:text-gray-300">
+            Based in <span className="text-gray-900 dark:text-white font-medium">{user.location}</span>
           </p>
         </motion.div>
       </div>

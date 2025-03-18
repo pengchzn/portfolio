@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import { getServerConfig } from './config/server'
 import { ConfigProvider } from './context/ConfigContext'
+import { ThemeProvider } from './context/ThemeContext'
+import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,9 +30,14 @@ export default async function RootLayout({
   
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen`}>
+      <body className={`${inter.className} min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors`}>
         <ConfigProvider config={config}>
-          {children}
+          <ThemeProvider>
+            <div className="flex flex-col min-h-screen">
+              {children}
+              <Footer />
+            </div>
+          </ThemeProvider>
         </ConfigProvider>
       </body>
     </html>

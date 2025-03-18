@@ -2,9 +2,10 @@
 import { motion } from 'framer-motion'
 import * as SiIcons from 'react-icons/si'
 import { useSkillsConfig } from '../context/ConfigContext'
+import type { Skill } from '../types'
 
 export default function Skills() {
-  const { technical: skills, soft: softSkills } = useSkillsConfig()
+  const { technical: skills, soft: softSkills }: { technical: Skill[], soft: string[] } = useSkillsConfig()
 
   const getIcon = (iconName: string) => {
     const Icon = (SiIcons as any)[iconName]
@@ -43,7 +44,7 @@ export default function Skills() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Technical <span className="gradient-text">Skills</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             A collection of technologies I've mastered, with a focus on modern web development
           </p>
         </motion.div>
@@ -55,17 +56,17 @@ export default function Skills() {
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
-          {skills.map((skill) => (
+          {skills.map((skill: Skill) => (
             <motion.div
               key={skill.name}
               variants={itemVariants}
               className="glass-effect p-6 rounded-lg flex flex-col items-center justify-center hover:transform hover:scale-105 transition-transform duration-200"
             >
-              <div className={skill.color}>
+              <div className={typeof skill.color === 'string' ? skill.color : `${skill.color.light} dark:${skill.color.dark}`}>
                 {getIcon(skill.icon)}
               </div>
-              <h3 className="mt-4 font-medium text-lg">{skill.name}</h3>
-              <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
+              <h3 className="mt-4 font-medium text-lg text-gray-900 dark:text-white">{skill.name}</h3>
+              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-2">
                 <div
                   className="bg-gradient-to-r from-cyan-400 to-cyan-600 h-2 rounded-full"
                   style={{ width: `${skill.level}%` }}
@@ -85,10 +86,10 @@ export default function Skills() {
         >
           <h3 className="text-2xl font-bold mb-6">Soft Skills</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {softSkills.map((skill, index) => (
+            {softSkills.map((skill: string, index: number) => (
               <motion.span
                 key={skill}
-                className="glass-effect px-4 py-2 rounded-full text-sm"
+                className="glass-effect px-4 py-2 rounded-full text-sm text-gray-900 dark:text-white"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}

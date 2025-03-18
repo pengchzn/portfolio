@@ -1,62 +1,4 @@
-// Types for configuration
-export interface Config {
-  user: {
-    name: string
-    title: string
-    location: string
-    email: string
-    bio: string
-  }
-  social: {
-    github: string
-    linkedin: string
-    twitter: string
-    instagram: string
-  }
-  projects: Array<{
-    title: string
-    description: string
-    tags: string[]
-    image: string
-    github: string
-    demo: string
-    featured: boolean
-  }>
-  skills: {
-    technical: Array<{
-      name: string
-      icon: string
-      color: string
-      level: number
-    }>
-    soft: string[]
-  }
-  site: {
-    theme: {
-      primary: string
-      secondary: string
-      background: string
-      text: string
-    }
-    meta: {
-      title: string
-      description: string
-      keywords: string
-      ogImage: string
-    }
-    features: {
-      darkMode: boolean
-      animations: boolean
-      contactForm: boolean
-      newsletter: boolean
-      blog: boolean
-    }
-    navigation: Array<{
-      label: string
-      path: string
-    }>
-  }
-}
+import type { Config } from '../types'
 
 // Default configuration
 export const defaultConfig: Config = {
@@ -107,7 +49,15 @@ export const defaultConfig: Config = {
       { name: "JavaScript", icon: "SiJavascript", color: "text-yellow-400", level: 90 },
       { name: "TypeScript", icon: "SiTypescript", color: "text-blue-400", level: 85 },
       { name: "React", icon: "SiReact", color: "text-cyan-400", level: 90 },
-      { name: "Next.js", icon: "SiNextdotjs", color: "text-white", level: 85 },
+      { 
+        name: "Next.js", 
+        icon: "SiNextdotjs", 
+        color: {
+          light: "text-gray-900",
+          dark: "text-white"
+        }, 
+        level: 85 
+      },
       { name: "Python", icon: "SiPython", color: "text-yellow-300", level: 80 },
       { name: "Docker", icon: "SiDocker", color: "text-blue-500", level: 75 }
     ],
@@ -115,8 +65,16 @@ export const defaultConfig: Config = {
   },
   site: {
     theme: {
-      primary: "#00DC82",
-      secondary: "#36E4DA",
+      gradients: {
+        light: {
+          from: "#4F46E5",
+          to: "#06B6D4"
+        },
+        dark: {
+          from: "#00DC82",
+          to: "#36E4DA"
+        }
+      },
       background: "#000000",
       text: "#FFFFFF"
     },
@@ -149,13 +107,9 @@ export const getProjectsConfig = () => defaultConfig.projects
 export const getSkillsConfig = () => defaultConfig.skills
 export const getSiteConfig = () => defaultConfig.site
 
-// Helper function to get theme CSS variables
-export const getThemeVariables = () => {
-  const { theme } = defaultConfig.site
-  return {
-    '--primary-color': theme.primary,
-    '--secondary-color': theme.secondary,
-    '--background-color': theme.background,
-    '--text-color': theme.text,
-  }
+// Helper function to get theme gradient variables
+export const getThemeGradient = (isDark: boolean = false) => {
+  const { gradients } = defaultConfig.site.theme
+  const colors = isDark ? gradients.dark : gradients.light
+  return `linear-gradient(45deg, ${colors.from}, ${colors.to})`
 }

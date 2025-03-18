@@ -1,6 +1,6 @@
 'use client'
 import { createContext, useContext } from 'react'
-import type { Config } from '../config'
+import type { Config } from '../types'
 
 const ConfigContext = createContext<Config | null>(null)
 
@@ -27,8 +27,8 @@ export function useConfig() {
 }
 
 // Export convenience hooks for different config sections
-export const useUserConfig = () => useConfig().user
-export const useSocialConfig = () => useConfig().social
-export const useProjectsConfig = () => useConfig().projects
-export const useSkillsConfig = () => useConfig().skills
-export const useSiteConfig = () => useConfig().site
+export const useUserConfig = (): Config['user'] => useConfig().user
+export const useSocialConfig = (): Config['social'] => useConfig().social
+export const useProjectsConfig = (): Config['projects'] => useConfig().projects
+export const useSkillsConfig = (): Config['skills'] => useConfig().skills
+export const useSiteConfig = (): Config['site'] => useConfig().site

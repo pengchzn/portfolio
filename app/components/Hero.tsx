@@ -33,7 +33,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl"
+            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl"
           >
             {user.bio}
           </motion.p>
@@ -48,7 +48,7 @@ export default function Hero() {
               <motion.a
                 key={link.label}
                 href={link.url}
-                className="text-gray-300 hover:text-white transition-colors duration-200"
+                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-200"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export default function Hero() {
           >
             <motion.a
               href="#projects"
-              className="glass-effect px-8 py-3 rounded-full text-white font-medium hover:bg-opacity-90 transition-all duration-200"
+              className="glass-effect px-8 py-3 rounded-full text-gray-900 dark:text-white font-medium hover:bg-opacity-90 transition-all duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

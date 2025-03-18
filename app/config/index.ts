@@ -1,4 +1,5 @@
 import type { Config } from '../types'
+export type { Config }
 
 // Default configuration
 export const defaultConfig: Config = {

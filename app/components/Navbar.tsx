@@ -2,12 +2,12 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
-import { getSiteConfig, getUserConfig } from '../config'
+import { useUserConfig, useSiteConfig } from '../context/ConfigContext'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const { navigation: menuItems } = getSiteConfig()
-  const { name } = getUserConfig()
+  const { navigation: menuItems } = useSiteConfig()
+  const { name } = useUserConfig()
 
   return (
     <motion.nav 

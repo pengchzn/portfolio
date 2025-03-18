@@ -1,10 +1,10 @@
 'use client'
 import { motion } from 'framer-motion'
 import * as SiIcons from 'react-icons/si'
-import { getSkillsConfig } from '../config'
+import { useSkillsConfig } from '../context/ConfigContext'
 
 export default function Skills() {
-  const { technical: skills, soft: softSkills } = getSkillsConfig()
+  const { technical: skills, soft: softSkills } = useSkillsConfig()
 
   const getIcon = (iconName: string) => {
     const Icon = (SiIcons as any)[iconName]
@@ -53,7 +53,7 @@ export default function Skills() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
           {skills.map((skill) => (
             <motion.div

@@ -1,11 +1,11 @@
 'use client'
 import { motion } from 'framer-motion'
-import { FiMail, FiGithub, FiLinkedin, FiTwitter, FiInstagram } from 'react-icons/fi'
-import { getUserConfig, getSocialConfig } from '../config'
+import { FiMail, FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi'
+import { useUserConfig, useSocialConfig } from '../context/ConfigContext'
 
 export default function Contact() {
-  const user = getUserConfig()
-  const social = getSocialConfig()
+  const user = useUserConfig()
+  const social = useSocialConfig()
 
   const contactMethods = [
     {

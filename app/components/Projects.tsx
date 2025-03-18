@@ -1,10 +1,10 @@
 'use client'
 import { motion } from 'framer-motion'
 import { FiExternalLink, FiGithub } from 'react-icons/fi'
-import { getProjectsConfig } from '../config'
+import { useProjectsConfig } from '../context/ConfigContext'
 
 export default function Projects() {
-  const projects = getProjectsConfig().filter(project => project.featured)
+  const projects = useProjectsConfig().filter(project => project.featured)
 
   return (
     <section id="projects" className="py-20">

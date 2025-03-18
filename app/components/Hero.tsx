@@ -1,11 +1,11 @@
 'use client'
 import { motion } from 'framer-motion'
 import { FiGithub, FiLinkedin, FiMail, FiInstagram } from 'react-icons/fi'
-import { getUserConfig, getSocialConfig } from '../config'
+import { useUserConfig, useSocialConfig } from '../context/ConfigContext'
 
 export default function Hero() {
-  const user = getUserConfig()
-  const social = getSocialConfig()
+  const user = useUserConfig()
+  const social = useSocialConfig()
   
   const socialLinks = [
     { icon: <FiGithub size={24} />, url: social.github, label: 'GitHub' },

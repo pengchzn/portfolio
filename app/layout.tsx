@@ -1,12 +1,14 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
-import { getSiteConfig } from './config'
+import { getServerConfig } from './config/server'
+import { ConfigProvider } from './context/ConfigContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export function generateMetadata(): Metadata {
-  const { meta } = getSiteConfig()
+export async function generateMetadata(): Promise<Metadata> {
+  const config = await getServerConfig()
+  const { meta } = config.site
   return {
     title: meta.title,
     description: meta.description,
@@ -17,15 +19,19 @@ export function generateMetadata(): Metadata {
   }
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const config = await getServerConfig()
+  
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen`}>
-        {children}
+        <ConfigProvider config={config}>
+          {children}
+        </ConfigProvider>
       </body>
     </html>
   )

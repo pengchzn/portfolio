@@ -54,11 +54,12 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/* Mobile Theme Toggle and Menu Button */}
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white p-2"
             >
               {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
@@ -86,9 +87,6 @@ export default function Navbar() {
                   {item.label}
                 </motion.a>
               ))}
-              <div className="px-3 py-2">
-                <ThemeToggle />
-              </div>
             </div>
           </motion.div>
         )}

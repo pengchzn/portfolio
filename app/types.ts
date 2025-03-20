@@ -1,13 +1,6 @@
-export type ThemeColor = string | {
-  light: string
-  dark: string
-}
-
 export interface Skill {
   name: string
   icon: string
-  color: ThemeColor
-  level: number
 }
 
 export interface Project {

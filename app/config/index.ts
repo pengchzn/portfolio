@@ -47,20 +47,22 @@ export const defaultConfig: Config = {
   ],
   skills: {
     technical: [
-      { name: "JavaScript", icon: "SiJavascript", color: "text-yellow-400", level: 90 },
-      { name: "TypeScript", icon: "SiTypescript", color: "text-blue-400", level: 85 },
-      { name: "React", icon: "SiReact", color: "text-cyan-400", level: 90 },
-      { 
-        name: "Next.js", 
-        icon: "SiNextdotjs", 
-        color: {
-          light: "text-gray-900",
-          dark: "text-white"
-        }, 
-        level: 85 
-      },
-      { name: "Python", icon: "SiPython", color: "text-yellow-300", level: 80 },
-      { name: "Docker", icon: "SiDocker", color: "text-blue-500", level: 75 }
+      { name: "JavaScript", icon: "SiJavascript" },
+      { name: "TypeScript", icon: "SiTypescript" },
+      { name: "React", icon: "SiReact" },
+      { name: "Next.js", icon: "SiNextdotjs" },
+      { name: "Python", icon: "SiPython" },
+      { name: "Node.js", icon: "SiNodedotjs" },
+      { name: "Docker", icon: "SiDocker" },
+      { name: "PostgreSQL", icon: "SiPostgresql" },
+      { name: "MongoDB", icon: "SiMongodb" },
+      { name: "Redis", icon: "SiRedis" },
+      { name: "Git", icon: "SiGit" },
+      { name: "GitHub", icon: "SiGithub" },
+      { name: "AWS", icon: "SiAmazonaws" },
+      { name: "Kubernetes", icon: "SiKubernetes" },
+      { name: "TailwindCSS", icon: "SiTailwindcss" },
+      { name: "GraphQL", icon: "SiGraphql" }
     ],
     soft: ["Problem Solving", "Team Leadership", "Communication", "Project Management"]
   },

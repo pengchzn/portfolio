@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import * as SiIcons from 'react-icons/si'
 import { useSkillsConfig } from '../context/ConfigContext'
 import type { Skill } from '../types'
+import IconCloud from './IconCloud'
 
 export default function Skills() {
   const { technical: skills, soft: softSkills }: { technical: Skill[], soft: string[] } = useSkillsConfig()
@@ -49,57 +50,79 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-        >
-          {skills.map((skill: Skill) => (
-            <motion.div
-              key={skill.name}
-              variants={itemVariants}
-              className="glass-effect p-6 rounded-lg flex flex-col items-center justify-center hover:transform hover:scale-105 transition-transform duration-200"
-            >
-              <div className={typeof skill.color === 'string' ? skill.color : `${skill.color.light} dark:${skill.color.dark}`}>
-                {getIcon(skill.icon)}
-              </div>
-              <h3 className="mt-4 font-medium text-lg text-gray-900 dark:text-white">{skill.name}</h3>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-2">
-                <div
-                  className="bg-gradient-to-r from-cyan-400 to-cyan-600 h-2 rounded-full"
-                  style={{ width: `${skill.level}%` }}
-                />
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-12">
+          {/* Soft Skills - Left Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col justify-center h-full md:pr-8"
+          >
+            <h3 className="text-2xl font-bold mb-8 text-center md:text-left">
+              Soft <span className="gradient-text">Skills</span>
+            </h3>
+            <div className="flex flex-wrap gap-4 md:justify-start justify-center">
+              {softSkills.map((skill: string, index: number) => (
+                <motion.span
+                  key={skill}
+                  className="glass-effect px-4 py-2 rounded-full text-sm text-gray-900 dark:text-white"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </div>
+          </motion.div>
 
-        {/* Soft Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 text-center"
-        >
-          <h3 className="text-2xl font-bold mb-6">Soft Skills</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {softSkills.map((skill: string, index: number) => (
-              <motion.span
-                key={skill}
-                className="glass-effect px-4 py-2 rounded-full text-sm text-gray-900 dark:text-white"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
-                {skill}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
+          {/* Technical Skills Cloud - Right Side */}
+          <motion.div
+            variants={containerVariants}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="md:pl-8 aspect-square"
+          >
+            <IconCloud
+              iconSlugs={skills.map((skill) => {
+                // 从 react-icons 的 Si 前缀映射到 simple-icons 的 slug
+                const iconMap: { [key: string]: string } = {
+                  SiJavascript: "javascript",
+                  SiTypescript: "typescript",
+                  SiReact: "react",
+                  SiNextdotjs: "nextdotjs",
+                  SiPython: "python",
+                  SiDocker: "docker",
+                  SiNodedotjs: "nodedotjs",
+                  SiHtml5: "html5",
+                  SiCss3: "css3",
+                  SiGit: "git",
+                  SiGithub: "github",
+                  SiTailwindcss: "tailwindcss",
+                  SiMongodb: "mongodb",
+                  SiFirebase: "firebase",
+                  SiPostgresql: "postgresql",
+                  SiRedis: "redis",
+                  SiNginx: "nginx",
+                  SiVuedotjs: "vuedotjs",
+                  SiAngular: "angular",
+                  SiDjango: "django",
+                  SiFlask: "flask",
+                  SiJava: "java",
+                  SiKubernetes: "kubernetes",
+                  SiAmazonaws: "amazonaws",
+                  SiGooglecloud: "googlecloud",
+                  SiMicrosoftazure: "microsoftazure"
+                };
+                return iconMap[skill.icon] || skill.name.toLowerCase();
+              })}
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   )

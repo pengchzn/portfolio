@@ -135,17 +135,20 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
   useEffect(() => {
     // 覆盖默认的 simple-icons 数据源
     const originalFetch = window.fetch;
-    const newFetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
+    window.fetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
       const url = input.toString();
-      // 拦截所有 jsDelivr 请求
-      if (url.includes('jsdelivr.net')) {
-        const newUrl = url.replace('cdn.jsdelivr.net', 'fastly.jsdelivr.net');
-        return originalFetch(newUrl, init);
+      
+      // 将所有 jsdelivr 相关请求重定向到 fastly
+      if (url.includes('jsdelivr.net') || url.includes('raw.githubusercontent.com/simple-icons')) {
+        const cdnUrl = url.includes('raw.githubusercontent.com/simple-icons')
+          ? 'https://fastly.jsdelivr.net/gh/simple-icons/simple-icons@14.0.0/_data/simple-icons.json'
+          : url.replace('cdn.jsdelivr.net', 'fastly.jsdelivr.net');
+        
+        return originalFetch(cdnUrl, init);
       }
+
       return originalFetch(input, init);
     };
-
-    window.fetch = newFetch;
 
     setMounted(true);
 

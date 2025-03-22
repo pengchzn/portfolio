@@ -29,6 +29,15 @@ export default async function RootLayout({
   
   return (
     <html lang="en">
+      <head>
+        <link 
+          rel="preload" 
+          href="/fonts/maple-mono/MapleMonoRegular.ttf" 
+          as="font" 
+          type="font/ttf" 
+          crossOrigin="anonymous"
+        />
+      </head>
       <body style={{fontFamily}} className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
         <ConfigProvider config={config}>
           <ThemeProvider>

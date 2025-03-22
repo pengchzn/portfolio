@@ -60,7 +60,8 @@ const forceDarkIcons = new Set([
   'plasma',
   'figma',
   'xcode',
-  'swift'
+  'swift',
+  `amazonwebservices`
 ]);
 
 const shouldBeWhite = (hex: string, slug: string, isDarkMode: boolean) => {

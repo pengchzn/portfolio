@@ -32,9 +32,9 @@ export default async function RootLayout({
       <head>
         <link 
           rel="preload" 
-          href="/fonts/maple-mono/MapleMonoRegular.ttf" 
+          href="/fonts/maple-mono/MapleMonoRegular.woff2" 
           as="font" 
-          type="font/ttf" 
+          type="font/woff2" 
           crossOrigin="anonymous"
         />
       </head>

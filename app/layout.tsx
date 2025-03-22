@@ -5,7 +5,6 @@ import { getServerConfig } from './config/server'
 import { ConfigProvider } from './context/ConfigContext'
 import { ThemeProvider } from './context/ThemeContext'
 import Footer from './components/Footer'
-import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,12 +30,6 @@ export default async function RootLayout({
   
   return (
     <html lang="en">
-      <head>
-        <Script
-          src="/js/jsdelivr-auto-fallback.js"
-          strategy="beforeInteractive"
-        />
-      </head>
       <body className={`${inter.className} min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors`}>
         <ConfigProvider config={config}>
           <ThemeProvider>

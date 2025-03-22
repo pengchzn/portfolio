@@ -133,7 +133,38 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
 
   // 等待客户端渲染完成
   useEffect(() => {
+    // 覆盖默认的 simple-icons 数据源
+    const originalFetch = window.fetch;
+    const newFetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
+      const url = input.toString();
+      // 只拦截 simple-icons.json 的请求
+      if (url.includes('simple-icons.json')) {
+        return originalFetch(
+          'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@14.0.0/_data/simple-icons.json',
+          init
+        );
+      }
+      // 如果是图标 SVG 的请求，重定向到 jsDelivr CDN
+      if (url.includes('node_modules/simple-icons/icons/')) {
+        const iconName = url.split('/').pop()?.replace('.svg', '');
+        if (iconName) {
+          return originalFetch(
+            `https://cdn.jsdelivr.net/npm/simple-icons@14.0.0/icons/${iconName}.svg`,
+            init
+          );
+        }
+      }
+      return originalFetch(input, init);
+    };
+
+    window.fetch = newFetch;
+
     setMounted(true);
+
+    // 清理函数，恢复原始的 fetch
+    return () => {
+      window.fetch = originalFetch;
+    };
   }, []);
 
   // 确保至少有12个图标

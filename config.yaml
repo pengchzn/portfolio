@@ -97,9 +97,15 @@ skills:
     - "Project Management"
 
 # Site Configuration
-site:
-  theme:
-    gradients:
+  site:
+    fonts:
+      default: "maple-mono"
+      alternatives:
+        - "system-ui"
+        - "sans-serif"
+    
+    theme:
+      gradients:
       light:
         from: "#4F46E5"  # indigo-600
         to: "#06B6D4"    # cyan-600

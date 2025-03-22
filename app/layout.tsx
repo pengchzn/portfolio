@@ -1,22 +1,18 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import { getServerConfig } from './config/server'
 import { ConfigProvider } from './context/ConfigContext'
 import { ThemeProvider } from './context/ThemeContext'
 import Footer from './components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getServerConfig()
-  const { meta } = config.site
   return {
-    title: meta.title,
-    description: meta.description,
-    keywords: meta.keywords,
+    title: config?.site?.meta?.title ?? 'Portfolio',
+    description: config?.site?.meta?.description ?? '',
+    keywords: config?.site?.meta?.keywords ?? '',
     openGraph: {
-      images: [meta.ogImage],
+      images: config?.site?.meta?.ogImage ? [config.site.meta.ogImage] : [],
     },
   }
 }
@@ -27,10 +23,13 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   const config = await getServerConfig()
+  const fontFamily = config?.site?.fonts?.default 
+    ? `${config.site.fonts.default}, ${config.site.fonts.alternatives?.join(', ') ?? 'system-ui, sans-serif'}`
+    : 'maple-mono, system-ui, sans-serif'
   
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors`}>
+      <body style={{fontFamily}} className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
         <ConfigProvider config={config}>
           <ThemeProvider>
             <div className="flex flex-col min-h-screen">

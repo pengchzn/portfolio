@@ -38,6 +38,10 @@ export interface Config {
     soft: string[]
   }
   site: {
+    fonts: {
+      default: string
+      alternatives: string[]
+    }
     theme: {
       gradients: {
         light: {

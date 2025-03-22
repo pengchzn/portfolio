@@ -67,6 +67,10 @@ export const defaultConfig: Config = {
     soft: ["Problem Solving", "Team Leadership", "Communication", "Project Management"]
   },
   site: {
+    fonts: {
+      default: "maple-mono",
+      alternatives: ["system-ui", "sans-serif"]
+    },
     theme: {
       gradients: {
         light: {

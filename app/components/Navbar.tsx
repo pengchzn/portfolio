@@ -43,8 +43,10 @@ NavLink.displayName = 'NavLink'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { navigation: menuItems } = useSiteConfig()
-  const { name } = useUserConfig()
+  const siteConfig = useSiteConfig()
+  const userConfig = useUserConfig()
+  const menuItems = siteConfig?.navigation ?? []
+  const name = userConfig?.name ?? ''
 
   const scrollToTop = () => {
     window.scrollTo({

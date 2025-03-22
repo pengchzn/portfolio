@@ -79,7 +79,7 @@ skills:
       icon: "SiGithub"
       
     - name: "AWS"
-      icon: "SiAmazonaws"
+      icon: "SiAmazonWebServices"
       
     - name: "Kubernetes"
       icon: "SiKubernetes"

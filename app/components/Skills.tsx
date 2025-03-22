@@ -13,15 +13,8 @@ type SoftSkill = {
   description: string
 }
 
-const slugMap: Record<string, string> = {
-  'nextdotjs': 'nextdotjs',
-  'nodedotjs': 'nodedotjs',
-  'amazonaws': 'amazonwebservices',
-  'tailwindcss': 'tailwindcss'
-}
-
 const convertToSimpleIconSlug = (iconName: string): string => 
-  slugMap[iconName.toLowerCase()] || iconName.replace(/^Si/, '').toLowerCase()
+  iconName.replace(/^Si/, '').toLowerCase()
 
 const SoftSkillCard = ({ item, index }: { item: SoftSkill; index: number }) => (
   <motion.div

@@ -137,22 +137,10 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
     const originalFetch = window.fetch;
     const newFetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
       const url = input.toString();
-      // 只拦截 simple-icons.json 的请求
-      if (url.includes('simple-icons.json')) {
-        return originalFetch(
-          'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@14.0.0/_data/simple-icons.json',
-          init
-        );
-      }
-      // 如果是图标 SVG 的请求，重定向到 jsDelivr CDN
-      if (url.includes('node_modules/simple-icons/icons/')) {
-        const iconName = url.split('/').pop()?.replace('.svg', '');
-        if (iconName) {
-          return originalFetch(
-            `https://cdn.jsdelivr.net/npm/simple-icons@14.0.0/icons/${iconName}.svg`,
-            init
-          );
-        }
+      // 拦截所有 jsDelivr 请求
+      if (url.includes('jsdelivr.net')) {
+        const newUrl = url.replace('cdn.jsdelivr.net', 'fastly.jsdelivr.net');
+        return originalFetch(newUrl, init);
       }
       return originalFetch(input, init);
     };

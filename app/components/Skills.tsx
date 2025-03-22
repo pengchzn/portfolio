@@ -22,10 +22,10 @@ const convertToSimpleIconSlug = (iconName: string): string => {
   
   // 特殊情况处理
   const specialCases: Record<string, string> = {
-    'nextdotjs': 'next.js',
-    'nodedotjs': 'node.js',
-    'amazonaws': 'aws',
-    'tailwindcss': 'tailwind-css'
+    'nextdotjs': 'nextdotjs',
+    'nodedotjs': 'nodedotjs',
+    'amazonaws': 'amazonwebservices',  // 修正为正确的 slug
+    'tailwindcss': 'tailwindcss'
   }
 
   return specialCases[slug] || slug

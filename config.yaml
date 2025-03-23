@@ -103,6 +103,13 @@ site:
     alternatives:
       - "system-ui"
       - "sans-serif"
+    "maple-mono":
+      src: 
+        - path: "/fonts/maple-mono/MapleMonoRegular.woff2"
+          format: "woff2"
+      weight: "normal"
+      style: "normal"
+      display: "fallback"
   
   theme:
     gradients:

@@ -4,6 +4,7 @@ import { getServerConfig } from './config/server'
 import { ConfigProvider } from './context/ConfigContext'
 import { ThemeProvider } from './context/ThemeContext'
 import Footer from './components/Footer'
+import type { FontConfig } from './types'
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getServerConfig()
@@ -28,17 +29,38 @@ export default async function RootLayout({
   if (!config) throw new Error('Failed to load configuration')
   
   const fontFamily = `${config.site.fonts.default}, ${config.site.fonts.alternatives.join(', ')}`
+  const fontConfig = config.site.fonts[config.site.fonts.default]
+  
+  // Type guard to check if the value is a FontConfig
+  const isFontConfig = (value: any): value is FontConfig => {
+    return value && 'src' in value && 'weight' in value && 'style' in value && 'display' in value
+  }
   
   return (
     <html lang="en">
       <head>
-        <link 
-          rel="preload" 
-          href="/fonts/maple-mono/MapleMonoRegular.woff2" 
-          as="font" 
-          type="font/woff2" 
-          crossOrigin="anonymous"
-        />
+        {isFontConfig(fontConfig) && (
+          <style dangerouslySetInnerHTML={{
+            __html: `
+              @font-face {
+                font-family: '${config.site.fonts.default}';
+                src: url('${fontConfig.src[0].path}') format('${fontConfig.src[0].format}');
+                font-weight: ${fontConfig.weight};
+                font-style: ${fontConfig.style};
+                font-display: ${fontConfig.display};
+              }
+            `
+          }} />
+        )}
+        {isFontConfig(fontConfig) && (
+          <link 
+            rel="preload" 
+            href={fontConfig.src[0].path}
+            as="font" 
+            type="font/woff2" 
+            crossOrigin="anonymous"
+          />
+        )}
       </head>
       <body style={{fontFamily}} className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
         <ConfigProvider config={config}>

@@ -18,6 +18,16 @@ export interface NavigationItem {
   path: string
 }
 
+export interface FontConfig {
+  src: Array<{
+    path: string
+    format: string
+  }>
+  weight: string
+  style: string
+  display: string
+}
+
 export interface Config {
   githubSnake?: {
     enabled: boolean
@@ -45,6 +55,7 @@ export interface Config {
     fonts: {
       default: string
       alternatives: string[]
+      [key: string]: FontConfig | string | string[]
     }
     theme: {
       gradients: {

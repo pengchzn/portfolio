@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'maple-mono';
-  src: url('/fonts/maple-mono/MapleMonoRegular.woff2') format('woff2'),
-       url('/fonts/maple-mono/MapleMonoRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
-}
-
 
 .gradient-text {
   @apply bg-clip-text text-transparent;

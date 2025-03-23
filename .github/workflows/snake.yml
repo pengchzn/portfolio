@@ -2,8 +2,8 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # 每天 UTC 0:00 运行
-  workflow_dispatch:      # 支持手动运行
+    - cron: "0 0 * * *" # every day at 00:00
+  workflow_dispatch: # allows to run the workflow manually
   push:
     branches: [ main ]
 
@@ -29,5 +29,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add public/github-snake*.svg
-          git commit -m "🐍 更新贡献图" || echo "无更新"
+          git commit -m "🐍 update contribution graph" || echo "no update"
           git push

@@ -9,9 +9,6 @@ import { animations, styles, sizes } from '../config/ui'
 
 import { SoftSkill } from '../types'
 
-const convertToSimpleIconSlug = (iconName: string): string => 
-  iconName.replace(/^Si/, '').toLowerCase()
-
 const getIconComponent = (iconName: string) => {
   const icons = {
     FiBox,
@@ -54,7 +51,7 @@ export default function Skills() {
   const skills = useSkillsConfig()
   const { technical, soft } = skills
 
-  const iconSlugs = technical.map(skill => convertToSimpleIconSlug(skill.icon))
+  const iconSlugs = technical.map(skill => skill.icon)
 
   return (
     <section id="skills" className="py-20">

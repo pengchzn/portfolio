@@ -43,52 +43,52 @@ projects:
 skills:
   technical:
     - name: "JavaScript"
-      icon: "SiJavascript"
+      icon: "javascript"
       
     - name: "TypeScript"
-      icon: "SiTypescript"
+      icon: "typescript"
       
     - name: "React"
-      icon: "SiReact"
+      icon: "react"
       
     - name: "Next.js"
-      icon: "SiNextdotjs"
+      icon: "nextdotjs"
       
     - name: "Python"
-      icon: "SiPython"
+      icon: "python"
       
     - name: "Node.js"
-      icon: "SiNodedotjs"
+      icon: "nodedotjs"
       
     - name: "Docker"
-      icon: "SiDocker"
+      icon: "docker"
       
     - name: "PostgreSQL"
-      icon: "SiPostgresql"
+      icon: "postgresql"
       
     - name: "MongoDB"
-      icon: "SiMongodb"
+      icon: "mongodb"
       
     - name: "Redis"
-      icon: "SiRedis"
+      icon: "redis"
       
     - name: "Git"
-      icon: "SiGit"
+      icon: "git"
       
     - name: "GitHub"
-      icon: "SiGithub"
+      icon: "github"
       
     - name: "AWS"
-      icon: "SiAmazonWebServices"
+      icon: "amazonwebservices"
       
     - name: "Kubernetes"
-      icon: "SiKubernetes"
+      icon: "kubernetes"
       
     - name: "TailwindCSS"
-      icon: "SiTailwindcss"
+      icon: "tailwindcss"
       
     - name: "GraphQL"
-      icon: "SiGraphql"
+      icon: "graphql"
 
   soft:
     - name: "Problem Solving"

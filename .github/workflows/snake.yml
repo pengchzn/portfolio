@@ -16,23 +16,27 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-          fetch-depth: 0
 
       - name: Generate Snake
-        uses: Platane/snk@v3
+        uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            public/github-snake.svg
-            public/github-snake-dark.svg?palette=github-dark
-            public/github-snake-light.svg?palette=github-light
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake-light.svg?palette=github-light
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+      - name: Debug Generated Files
+        run: |
+          ls -la dist/
+          mkdir -p public
+          cp dist/github-snake*.svg public/
+          ls -la public/
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add public/github-snake*.svg
+          git commit -m "🐍 update contribution graph" || echo "No changes to commit"
+          git push

@@ -48,34 +48,13 @@ const cloudProps: Omit<ICloud, "children"> = {
   },
 };
 
-// Known dark icons list (using accurate simple-icons slugs)
-const forceDarkIcons = new Set([
-  'github',
-  'nextdotjs',
-  'vercel',
-  'vscode',
-  'ios',
-  'apple',
-  'playstation',
-  'plasma',
-  'figma',
-  'xcode',
-  'swift',
-  `amazonwebservices`
-]);
-
-const shouldBeWhite = (hex: string, slug: string, isDarkMode: boolean) => {
+const shouldBeWhite = (hex: string, _slug: string, isDarkMode: boolean) => {
   // If not in dark mode, keep original color
   if (!isDarkMode) return false;
 
-  // Check if in forced dark icons list
-  if (forceDarkIcons.has(slug)) {
-    return true;
-  }
-
   try {
-    // Ensure hex is 6 digits
-    const fullHex = hex.padStart(6, '0');
+    // Remove # prefix if present and ensure hex is 6 digits
+    const fullHex = hex.replace('#', '').padStart(6, '0');
     
     // Convert hex to RGB
     const r = parseInt(fullHex.slice(0, 2), 16);
@@ -90,8 +69,8 @@ const shouldBeWhite = (hex: string, slug: string, isDarkMode: boolean) => {
       0.114 * (b * b)
     );
     
-    // Threshold adjusted to 130 (0-255 range)
-    return brightness < 130;
+    // Threshold adjusted to 50 (0-255 range)
+    return brightness < 50;
   } catch (e) {
     console.error(`Error checking color for hex: ${hex}`, e);
     return false;

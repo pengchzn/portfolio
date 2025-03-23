@@ -119,10 +119,17 @@ site:
 ### Deploy to Vercel (Recommended)
 
 1. Fork this repository
-2. Create a new project on [Vercel](https://vercel.com)
-3. Import your forked repository
-4. Vercel will automatically detect Next.js and configure the build settings
-5. Click "Deploy"
+2. Enable GitHub Actions:
+   - Go to your forked repository's Settings > Actions > General
+   - Under "Actions permissions", select "Allow all actions and reusable workflows"
+   - Click "Save"
+   - This is required for the GitHub contribution snake animation
+3. Create a new project on [Vercel](https://vercel.com)
+4. Import your forked repository
+5. Vercel will automatically detect Next.js and configure the build settings
+6. Click "Deploy"
+
+Note: The GitHub snake contribution graph will be automatically generated and updated daily through GitHub Actions.
 
 ### Manual Deployment
 

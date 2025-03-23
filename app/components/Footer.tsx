@@ -34,7 +34,8 @@ const Footer = () => {
           <div className="flex flex-col items-center space-y-3">
             <div className="flex items-center space-x-2">
               <span className={defaultTextStyle}>Built with</span>
-              <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>
+              <ExternalLink href="https://nextjs.org">Next.js</ExternalLink><span className={defaultTextStyle}>&</span><ExternalLink href="https://vercel.com">Vercel</ExternalLink>
+
             </div>
             <div className={`text-sm ${defaultTextStyle}`}>
               © {currentYear} {name}. All rights reserved.

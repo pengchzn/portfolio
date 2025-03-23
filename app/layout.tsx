@@ -7,12 +7,14 @@ import Footer from './components/Footer'
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getServerConfig()
+  if (!config) throw new Error('Failed to load configuration')
+  
   return {
-    title: config?.site?.meta?.title ?? 'Portfolio',
-    description: config?.site?.meta?.description ?? '',
-    keywords: config?.site?.meta?.keywords ?? '',
+    title: config.site.meta.title,
+    description: config.site.meta.description,
+    keywords: config.site.meta.keywords,
     openGraph: {
-      images: config?.site?.meta?.ogImage ? [config.site.meta.ogImage] : [],
+      images: config.site.meta.ogImage ? [config.site.meta.ogImage] : [],
     },
   }
 }
@@ -23,9 +25,9 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   const config = await getServerConfig()
-  const fontFamily = config?.site?.fonts?.default 
-    ? `${config.site.fonts.default}, ${config.site.fonts.alternatives?.join(', ') ?? 'system-ui, sans-serif'}`
-    : 'maple-mono, system-ui, sans-serif'
+  if (!config) throw new Error('Failed to load configuration')
+  
+  const fontFamily = `${config.site.fonts.default}, ${config.site.fonts.alternatives.join(', ')}`
   
   return (
     <html lang="en">

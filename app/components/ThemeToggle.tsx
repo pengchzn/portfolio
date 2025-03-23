@@ -31,7 +31,7 @@ export const ThemeToggle = memo(() => {
     <button
       onClick={toggleTheme}
       className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-      aria-label="切换主题"
+      aria-label="Toggle theme"
     >
       <ThemeIcon path={theme === 'light' ? iconPaths.light : iconPaths.dark} />
     </button>

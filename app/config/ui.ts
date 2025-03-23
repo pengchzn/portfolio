@@ -1,6 +1,6 @@
 import { MotionProps } from 'framer-motion'
 
-// 共用类型定义
+// Shared type definitions
 export type IconProps = {
   size?: number
   className?: string
@@ -10,7 +10,7 @@ export type AnimationDelay = {
   delay?: number
 }
 
-// 共用动画配置
+// Shared animation configurations
 export const animations = {
   fadeInUp: {
     initial: { opacity: 0, y: 20 },
@@ -27,7 +27,7 @@ export const animations = {
   }
 } as const
 
-// 共用样式类名
+// Shared style class names
 export const styles = {
   defaultText: 'text-gray-600 dark:text-gray-300',
   gradientText: 'gradient-text',
@@ -37,7 +37,7 @@ export const styles = {
   linkTransition: 'transition-colors duration-200'
 } as const
 
-// 共用尺寸
+// Shared sizes
 export const sizes = {
   icon: {
     sm: 20,

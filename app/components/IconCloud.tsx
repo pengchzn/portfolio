@@ -48,7 +48,7 @@ const cloudProps: Omit<ICloud, "children"> = {
   },
 };
 
-// 已知的深色图标列表（使用准确的 simple-icons slug）
+// Known dark icons list (using accurate simple-icons slugs)
 const forceDarkIcons = new Set([
   'github',
   'nextdotjs',
@@ -65,24 +65,24 @@ const forceDarkIcons = new Set([
 ]);
 
 const shouldBeWhite = (hex: string, slug: string, isDarkMode: boolean) => {
-  // 如果不是深色模式，保持原始颜色
+  // If not in dark mode, keep original color
   if (!isDarkMode) return false;
 
-  // 检查是否在强制深色图标列表中
+  // Check if in forced dark icons list
   if (forceDarkIcons.has(slug)) {
     return true;
   }
 
   try {
-    // 确保hex是6位
+    // Ensure hex is 6 digits
     const fullHex = hex.padStart(6, '0');
     
-    // 将hex转换为RGB
+    // Convert hex to RGB
     const r = parseInt(fullHex.slice(0, 2), 16);
     const g = parseInt(fullHex.slice(2, 4), 16);
     const b = parseInt(fullHex.slice(4, 6), 16);
     
-    // 使用HSP (Highly Sensitive Perceived Brightness) 公式
+    // Using HSP (Highly Sensitive Perceived Brightness) formula
     // √(0.299*R² + 0.587*G² + 0.114*B²)
     const brightness = Math.sqrt(
       0.299 * (r * r) +
@@ -90,7 +90,7 @@ const shouldBeWhite = (hex: string, slug: string, isDarkMode: boolean) => {
       0.114 * (b * b)
     );
     
-    // 阈值调整为 130 (0-255 范围)
+    // Threshold adjusted to 130 (0-255 range)
     return brightness < 130;
   } catch (e) {
     console.error(`Error checking color for hex: ${hex}`, e);
@@ -99,7 +99,7 @@ const shouldBeWhite = (hex: string, slug: string, isDarkMode: boolean) => {
 };
 
 const renderCustomIcon = (icon: SimpleIcon, isDarkMode: boolean) => {
-  // 复制图标对象
+  // Clone icon object
   const iconToRender = { ...icon };
   const makeWhite = shouldBeWhite(icon.hex, icon.slug, isDarkMode);
   
@@ -131,14 +131,14 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
 
-  // 等待客户端渲染完成
+  // Wait for client-side rendering to complete
   useEffect(() => {
-    // 覆盖默认的 simple-icons 数据源
+    // Override default simple-icons data source
     const originalFetch = window.fetch;
     window.fetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
       const url = input.toString();
       
-      // 将所有 jsdelivr 相关请求重定向到 fastly
+      // Redirect all jsdelivr related requests to fastly
       if (url.includes('jsdelivr.net') || url.includes('raw.githubusercontent.com/simple-icons')) {
         const cdnUrl = url.includes('raw.githubusercontent.com/simple-icons')
           ? 'https://fastly.jsdelivr.net/gh/simple-icons/simple-icons@14.0.0/_data/simple-icons.json'
@@ -152,13 +152,13 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
 
     setMounted(true);
 
-    // 清理函数，恢复原始的 fetch
+    // Cleanup function, restore original fetch
     return () => {
       window.fetch = originalFetch;
     };
   }, []);
 
-  // 确保至少有12个图标
+  // Ensure at least 12 icons
   const extendedSlugs = useMemo(() => {
     if (iconSlugs.length >= 12) return iconSlugs;
     const fillerIcons = [
@@ -174,7 +174,7 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
     fetchSimpleIcons({ slugs: extendedSlugs }).then(setData);
   }, [extendedSlugs]);
 
-  // 等待挂载完成
+  // Wait for mounting to complete
   if (!mounted) return null;
 
   const isDarkMode = theme === "dark";

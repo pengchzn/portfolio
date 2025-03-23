@@ -8,11 +8,11 @@ export default function GithubSnake() {
   
   return (
     <AnimatedSection className="w-full py-8">
-      <h2 className="text-2xl font-bold mb-6 text-center">GitHub贡献</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">GitHub Contributions</h2>
       <div className="flex justify-center">
         <img 
           src={`/github-snake-${theme}.svg`}
-          alt="GitHub贡献蛇图"
+          alt="GitHub contribution snake graph"
           className="max-w-full h-auto"
           loading="lazy"
         />

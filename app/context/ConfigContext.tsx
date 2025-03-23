@@ -3,29 +3,33 @@ import { createContext, useContext } from 'react'
 import type { Config } from '../types'
 import { defaultConfig } from '../config'
 
-const ConfigContext = createContext<Config>(defaultConfig)
+const ConfigContext = createContext<Config | null>(null)
 
 export function ConfigProvider({ 
   children, 
   config 
 }: { 
   children: React.ReactNode
-  config?: Config 
+  config: Config 
 }) {
   return (
-    <ConfigContext.Provider value={config ?? defaultConfig}>
+    <ConfigContext.Provider value={config}>
       {children}
     </ConfigContext.Provider>
   )
 }
 
 export function useConfig() {
-  return useContext(ConfigContext)
+  const config = useContext(ConfigContext)
+  if (!config) {
+    throw new Error('useConfig must be used within a ConfigProvider')
+  }
+  return config
 }
 
 // Export convenience hooks for different config sections
-export const useUserConfig = () => useConfig().user ?? defaultConfig.user
-export const useSocialConfig = () => useConfig().social ?? defaultConfig.social
-export const useProjectsConfig = () => useConfig().projects ?? defaultConfig.projects
-export const useSkillsConfig = () => useConfig().skills ?? defaultConfig.skills
-export const useSiteConfig = () => useConfig().site ?? defaultConfig.site
+export const useUserConfig = () => useConfig().user
+export const useSocialConfig = () => useConfig().social
+export const useProjectsConfig = () => useConfig().projects
+export const useSkillsConfig = () => useConfig().skills
+export const useSiteConfig = () => useConfig().site

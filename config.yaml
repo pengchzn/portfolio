@@ -91,10 +91,37 @@ skills:
       icon: "SiGraphql"
 
   soft:
-    - "Problem Solving"
-    - "Team Leadership"
-    - "Communication"
-    - "Project Management"
+    - name: "Problem Solving"
+      icon: "FiBox"
+      description: "Analytical thinking and creative solutions"
+      
+    - name: "Team Leadership"
+      icon: "FiUsers"
+      description: "Guiding and empowering teams"
+      
+    - name: "Communication"
+      icon: "FiMessageSquare"
+      description: "Clear and effective collaboration"
+      
+    - name: "Project Management"
+      icon: "FiTarget"
+      description: "Delivering results on time"
+      
+    - name: "Time Management"
+      icon: "FiClock"
+      description: "Efficient task prioritization"
+      
+    - name: "Adaptability"
+      icon: "FiAward"
+      description: "Embracing change and learning"
+      
+    - name: "Agile Mindset"
+      icon: "FiRefreshCw"
+      description: "Iterative improvement focus"
+      
+    - name: "Growth Mindset"
+      icon: "FiTrendingUp"
+      description: "Continuous self-improvement"
 
 # Site Configuration
 site:

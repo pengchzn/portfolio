@@ -1,6 +1,12 @@
-export interface Skill {
+export interface TechnicalSkill {
   name: string
   icon: string
+}
+
+export interface SoftSkill {
+  name: string
+  icon: string
+  description: string
 }
 
 export interface Project {
@@ -48,8 +54,8 @@ export interface Config {
   }
   projects: Project[]
   skills: {
-    technical: Skill[]
-    soft: string[]
+    technical: TechnicalSkill[]
+    soft: SoftSkill[]
   }
   site: {
     fonts: {

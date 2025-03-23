@@ -5,21 +5,7 @@ export type { Config }
 export const defaultConfig: Config = {
   githubSnake: {
     enabled: true,
-    username: "luorivergoddess",
-    theme: {
-      light: {
-        color_snake: "#4F46E5",
-        color_dots: "#E5E7EB",
-        color_grid: "#D1D5DB",
-        color_contributions: "#06B6D4"
-      },
-      dark: {
-        color_snake: "#00DC82",
-        color_dots: "#1F2937",
-        color_grid: "#374151",
-        color_contributions: "#36E4DA"
-      }
-    }
+    username: "luorivergoddess"
   },
   user: {
     name: "Luoshen",

@@ -1,11 +1,11 @@
 name: Generate Snake
 
 on:
-  push:
-    branches: [ main ]
   schedule:
     - cron: "0 0 * * *"  # 每天 UTC 0:00 运行
   workflow_dispatch:      # 支持手动运行
+  push:
+    branches: [ main ]
 
 permissions:
   contents: write
@@ -13,30 +13,21 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
-      - name: Generate Snake
-        uses: Platane/snk/svg-only@v3
+      - uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/github-snake-light.svg?palette=github-light
+            public/github-snake.svg
+            public/github-snake-dark.svg?palette=github-dark
+            public/github-snake-light.svg?palette=github-light
 
-      - name: Debug Generated Files
-        run: |
-          ls -la dist/
-          mkdir -p public
-          cp dist/github-snake*.svg public/
-          ls -la public/
-
-      - name: Commit and Push
+      - name: Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add public/github-snake*.svg
-          git commit -m "🐍 update contribution graph" || echo "No changes to commit"
+          git commit -m "🐍 更新贡献图" || echo "无更新"
           git push

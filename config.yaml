@@ -144,15 +144,4 @@ site:
 # GitHub Snake Configuration
 githubSnake:
   enabled: true
-  username: "luorivergoddess"  # 使用GitHub用户名
-  theme:
-    light:
-      color_snake: "#4F46E5"       # 蛇的颜色(亮色模式)
-      color_dots: "#E5E7EB"        # 背景点的颜色
-      color_grid: "#D1D5DB"        # 网格线颜色
-      color_contributions: "#06B6D4" # 贡献格子颜色
-    dark:
-      color_snake: "#00DC82"       # 蛇的颜色(暗色模式)
-      color_dots: "#1F2937"        # 背景点的颜色
-      color_grid: "#374151"        # 网格线颜色
-      color_contributions: "#36E4DA" # 贡献格子颜色
+  username: "luorivergoddess"

@@ -18,7 +18,22 @@ export interface NavigationItem {
   path: string
 }
 
+export interface GithubSnakeTheme {
+  color_snake: string
+  color_dots: string
+  color_grid: string
+  color_contributions: string
+}
+
 export interface Config {
+  githubSnake?: {
+    enabled: boolean
+    username: string
+    theme: {
+      light: GithubSnakeTheme
+      dark: GithubSnakeTheme
+    }
+  }
   user: {
     name: string
     title: string

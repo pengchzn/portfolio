@@ -97,37 +97,37 @@ skills:
     - "Project Management"
 
 # Site Configuration
-  site:
-    fonts:
-      default: "maple-mono"
-      alternatives:
-        - "system-ui"
-        - "sans-serif"
-    
-    theme:
-      gradients:
+site:
+  fonts:
+    default: "maple-mono"
+    alternatives:
+      - "system-ui"
+      - "sans-serif"
+  
+  theme:
+    gradients:
       light:
         from: "#4F46E5"  # indigo-600
         to: "#06B6D4"    # cyan-600
       dark:
         from: "#00DC82"  # green
         to: "#36E4DA"    # cyan
-    background: "#000000"
-    text: "#FFFFFF"
-    
+  background: "#000000"
+  text: "#FFFFFF"
+  
   meta:
     title: "Luoshen - Portfolio"
     description: "Welcome to my personal portfolio showcasing my work and skills in software development"
     keywords: "software engineer, web developer, full-stack developer, react developer"
     ogImage: "/og-image.png"
-    
+  
   features:
     darkMode: true
     animations: true
     contactForm: true
     newsletter: false
     blog: false
-
+  
   navigation:
     - label: "Home"
       path: "/"
@@ -140,3 +140,19 @@ skills:
       
     - label: "Contact"
       path: "#contact"
+
+# GitHub Snake Configuration
+githubSnake:
+  enabled: true
+  username: "luorivergoddess"  # 使用GitHub用户名
+  theme:
+    light:
+      color_snake: "#4F46E5"       # 蛇的颜色(亮色模式)
+      color_dots: "#E5E7EB"        # 背景点的颜色
+      color_grid: "#D1D5DB"        # 网格线颜色
+      color_contributions: "#06B6D4" # 贡献格子颜色
+    dark:
+      color_snake: "#00DC82"       # 蛇的颜色(暗色模式)
+      color_dots: "#1F2937"        # 背景点的颜色
+      color_grid: "#374151"        # 网格线颜色
+      color_contributions: "#36E4DA" # 贡献格子颜色

@@ -174,4 +174,4 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [GPL v3.0 License](LICENSE).

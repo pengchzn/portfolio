@@ -1,0 +1,269 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeaward}[2]{
+    \item
+    \begin{tabular*}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Peng Chen} \\ \vspace{1pt}
+    Shanghai, China \\ \vspace{1pt}
+    \small 
+    \href{mailto:x@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{pengchzn@gmail.com}} ~ 
+    \href{https://github.com/}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/pengchzn}}
+    \vspace{-8pt}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Western University}{September 2025 -- Expected August 2026}
+      {Master of Science in Statistics}{London, Canada}
+    \resumeSubheading
+      {Shanghai Institute of Technology}{September 2019 -- June 2024}
+      {Bachelor of Science in Computer Science, GPA: 4.0 (Rank: 1/129)}{Shanghai, China}
+        \begin{itemize}
+                \item\small Main Courese: Data Structures(92), Data Mining $\&$ Analysis(83), Development of Information System(91), Compilers Principles(99), etc.
+        \end{itemize}
+  \resumeSubHeadingListEnd
+
+%------Research Interest-------
+\section{RESEARCH INTERESTS}
+\ Machine Learning, \ Statistical Learning, \ Optimization, \ AI for Science, \ Natural Language Processing
+
+
+
+%-----------Publication-----------
+\section{Publication}
+\textbf{J-plus: A catalogue of globular cluster candidates around the m81/m82/ngc3077 triplet of galaxies}\\
+\textit {Monthly Notices of the Royal Astronomical Society} \hfill {Published} \\
+\textbf{A fast QR-based Principal Component Analysis implementation via torch}\\
+\textit{Astronomy and Computing} \hfill{Published} \\
+\textbf{Yonder: A python package for data denoising and reconstruction}\\
+\textit {Research Notes of the AAS} \hfill{Published}\\
+
+%-----------Research-----------
+\section{Research / Intern}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {JSTI Group Limited}{October 2024 -- May 2025}
+      {Algorithm Engineer}{Shanghai, China}
+      \resumeItemListStart
+        \resumeItem{\textbf{Research Topic:} Developing a Balancing System for Regional Road Networks Under High Passenger Flow Conditions with Overlaying Influencing Factors.}
+        \resumeItem{\textbf{Dynamic Management System for Emergency Lane:} Conducted a thorough analysis of various influencing factors affecting high passenger flow on highways to assess optimal conditions for the utilization of hard shoulders.}
+        \resumeItem{\textbf{Quantitative Model System for Imbalance Points:} Created multiple predictive models for traffic flow, incorporating variables such as high passenger volume, weather conditions, and accident occurrences to identify and quantify road network imbalance points.}
+        \resumeItem{\textbf{Regional Road Network Balancing Strategy:} Designed an integrated balancing strategy, consisting of upstream diversion, midstream flow control, and downstream discharge mechanisms, effectively enhancing the capacity and efficiency of the regional road network.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {labml.ai Deep Learning Paper Implementations}{May 2024 -- Present}
+      {Contributor}{Github}
+      \resumeItemListStart
+        \resumeItem{Spearheaded the optimization and translation of project content, focusing on improving clarity and accessibility for a global audience, particularly Chinese-speaking users.}
+        \resumeItem{Conducted meticulous reviews and edits of documentation to enhance comprehension and usability, ensuring accurate and high-quality translations that maintain the integrity of the original content.}
+        \resumeItem{Contributed to the project's increasing popularity and engagement, helping it become a go-to resource for deep learning enthusiasts and professionals alike. The project now has \textbf{59.1k} stars and \textbf{6.0k} forks on GitHub.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Reconstructing the movement of neutrinos with deep learning}{September 2023 -- June 2024}
+      {Undergraduate Thesis}{Shanghai, China}
+      \resumeItemListStart
+        \resumeItem{Developed a deep neural network model to reconstruct the movement direction of neutrinos from complex sensor data. Incorporated GPT attention blocks into a Transformer architecture, enhancing the model's ability to process long-sequence data.}
+        \resumeItem{Received recognition as an \textbf{outstanding paper} by my institute for the innovative approach and thorough research conducted.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {DataWhale}{May 2023 -- Present}
+      {Member}{Online}
+      \resumeItemListStart
+        \resumeItem{Engaged as a proactive member of DataWhale, a distinguished open-source organization with a focus on advancing the fields of data science and artificial intelligence through community-driven learning and collaboration.}
+        \resumeItem{Played a key role in educational initiatives reaching over 10,000 learners, demonstrating a significant impact on data science and AI learning globally.}
+        \resumeItem{Actively involved in DataWhale, an open-source community focused on data science and AI, contributing as a Teaching Assistant for major projects like \textbf{AIGC Specialized Study} and \textbf{Dive into Deep Learning} alongside Professor Li Mu.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Hello-Algo}{October 2022 -- Present}
+      {Contributor}{Github}
+      \resumeItemListStart
+        \resumeItem{Actively contributed to the development and enhancement of Hello-Algo, an acclaimed open-source tutorial designed to introduce learners to Data Structures and Algorithms.}
+        \resumeItem{Designed and implemented user-friendly Python examples and exercises, aimed at demystifying complex data structures and algorithms for beginners through practical, hands-on learning experiences.}
+        \resumeItem{Supported the project's growth and recognition in the developer and educational communities, with the project now boasting \textbf{110.0k} stars and \textbf{13.7k} forks on GitHub, indicating its widespread acceptance and use.}
+      \resumeItemListEnd
+
+          \resumeSubheading
+      {Shanghai Astronomical Observatory, Chinese Academy of Sciences}{July 2021 -- June 2022}
+      {Visiting Scholar}{Shanghai, China}
+      \resumeItemListStart
+        \resumeItem{Working on topic: \textbf{Discovering new galactic and extragalactic stellar association with statistical learning.}}
+        \resumeItem{Applied advanced statistical learning to analyze astronomical data, identifying new stellar associations using spectra and time series data, enhancing our understanding of galaxy structures.}
+        \resumeItem{Created \textbf{QRPCA}, a PyTorch-enhanced algorithm, improving PCA efficiency and accuracy, speeding up astronomical data analysis.}
+        \resumeItem{Developed \textbf{Yonder}, a specialized tool designed for effective data denoising and dimensionality reduction, aiding in astronomical research data preprocessing.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Science American}{January 2021 -- May 2022}
+      {Translation Intern}{Shanghai, China}
+      \resumeItemListStart
+        \resumeItem{Led the translation of cutting-edge scientific articles in areas including Computer Science and Artificial Intelligence, facilitating the dissemination of complex concepts to a broader audience.}
+        \resumeItem{Conducted extensive research to grasp and accurately translate specialized terminology and concepts, enhancing the accessibility of advanced scientific knowledge.}
+        \resumeItem{Adapted complex scientific ideas into engaging and accessible language, contributing to the global understanding of interdisciplinary scientific advancements.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------Awards-----------
+\section{Awards and Scholarships} 
+{China Robot Competition FIRA Simulation Group 5 Vs 5}{, \bf National 2nd Prize} \hfill{\em November, 2020}\\
+{China Robot Competition FIRA Simulation Group 11 Vs 11}{,\bf  National 3nd Prize} \hfill{\em November, 2020}\\
+{DongHua Cup College Student Cyber Security Invitational}{ \bf,National 3nd Prize} \hfill{\em December, 2022}\\
+{The Seventh Shanghai College Student Cyber Security Competition}{ ,\bf Shanghai 2nd Prize} \hfill{\em December, 2022}\\
+{Scholarship of Shanghai Insititute of Technology}{, \bf 2nd Prize} \hfill{\em November, 2023}\\
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programing Languages}{: Python, C++, R} \\
+     \textbf{Technologies/Frameworks}{: Linux, Pytorch, Numpy, Pandas} \\
+     \textbf{Languages}{: Mandarin(native), English(CET-6 550, Duolingo 120)} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+
+%-----------INVOLVEMENT---------------
+\section{Leadership / Extracurricular}
+    \resumeSubHeadingListStart
+        \resumeSubheading{Artifical Intellgence Club}{Autumn 2020 -- Present}{President}{Shanghai Institute of Technology}
+            \resumeItemListStart
+                \resumeItem{Led the Artificial Intelligence Club, focusing on teaching Python and machine learning, enhancing the AI understanding of members across various skill levels.}
+                \resumeItem{Honed leadership, organizational, and communication skills, successfully managing club operations and external collaborations.}
+            \resumeItemListEnd
+        
+    \resumeSubHeadingListEnd
+
+
+\end{document}
+

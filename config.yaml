@@ -1,76 +1,64 @@
 # Personal Information
 user:
-  name: "Luoshen"
-  title: "Software Engineer"
-  location: "San Jose, CA"
-  email: "luorivergoddess@gmail.com"
-  bio: "A passionate software engineer dedicated to crafting elegant solutions through code"
+  name: "Peng Chen"
+  title: "Machine Learning Engineer & Researcher"
+  location: "Shanghai, China"
+  email: "pengchzn@gmail.com"
+  bio: "A passionate machine learning engineer and researcher with expertise in statistical learning and AI applications in science"
 
 # Social Media Links
 social:
-  github: "https://github.com/luorivergoddess"
-  linkedin: "https://linkedin.com/in/yourusername"
+  github: "https://github.com/pengchzn"
+  linkedin: "https://linkedin.com/in/pengchzn"
   twitter: "https://twitter.com/luorivergoddess"
   instagram: "https://instagram.com/yourusername"
 
 # Featured Projects
 projects:
-  - title: "AI Chatbot Platform"
-    description: "An intelligent conversational AI platform built with Next.js and OpenAI API, featuring real-time responses and conversation history."
-    tags: ["Next.js", "OpenAI", "TypeScript", "Tailwind CSS"]
-    image: "/projects/chatbot.png"
-    github: "https://github.com/yourusername/ai-chatbot"
-    demo: "https://demo-url.com/chatbot"
+  - title: "QRPCA - Fast QR-based PCA Implementation"
+    description: "Developed a PyTorch-enhanced algorithm improving PCA efficiency and accuracy for astronomical data analysis, published in Astronomy and Computing."
+    tags: ["Python", "PyTorch", "Machine Learning", "Astronomy"]
+    image: "/projects/qrpca.png"
+    github: "https://github.com/pengchzn/qrpca"
     featured: true
 
-  - title: "E-commerce Dashboard"
-    description: "A comprehensive dashboard for managing online store operations, featuring real-time analytics and inventory management."
-    tags: ["React", "Node.js", "MongoDB", "Docker"]
-    image: "/projects/dashboard.png"
-    github: "https://github.com/yourusername/ecommerce-dashboard"
-    demo: "https://demo-url.com/dashboard"
+  - title: "Yonder - Data Denoising Package"
+    description: "A specialized Python package for data denoising and dimensionality reduction in astronomical research, published in Research Notes of the AAS."
+    tags: ["Python", "Data Science", "Astronomy", "Signal Processing"]
+    image: "/projects/yonder.png"
+    github: "https://github.com/pengchzn/yonder"
     featured: true
 
-  - title: "Task Management System"
-    description: "A collaborative task management solution with real-time updates, drag-and-drop functionality, and team collaboration features."
-    tags: ["React", "Firebase", "Material-UI", "TypeScript"]
-    image: "/projects/taskmanager.png"
-    github: "https://github.com/yourusername/task-manager"
-    demo: "https://demo-url.com/tasks"
+  - title: "Neutrino Movement Reconstruction"
+    description: "Deep learning model using GPT attention blocks and Transformer architecture to reconstruct neutrino movement directions from sensor data."
+    tags: ["Deep Learning", "PyTorch", "Transformers", "Physics"]
+    image: "/projects/neutrino.png"
+    github: "https://github.com/pengchzn/neutrino-reconstruction"
     featured: true
 
 # Skills Configuration
 skills:
   technical:
-    - name: "JavaScript"
-      icon: "javascript"
-      
-    - name: "TypeScript"
-      icon: "typescript"
-      
-    - name: "React"
-      icon: "react"
-      
-    - name: "Next.js"
-      icon: "nextdotjs"
-      
     - name: "Python"
       icon: "python"
       
-    - name: "Node.js"
-      icon: "nodedotjs"
+    - name: "C++"
+      icon: "cplusplus"
       
-    - name: "Docker"
-      icon: "docker"
+    - name: "R"
+      icon: "r"
       
-    - name: "PostgreSQL"
-      icon: "postgresql"
+    - name: "PyTorch"
+      icon: "pytorch"
       
-    - name: "MongoDB"
-      icon: "mongodb"
+    - name: "Linux"
+      icon: "linux"
       
-    - name: "Redis"
-      icon: "redis"
+    - name: "NumPy"
+      icon: "numpy"
+      
+    - name: "Pandas"
+      icon: "pandas"
       
     - name: "Git"
       icon: "git"
@@ -78,50 +66,43 @@ skills:
     - name: "GitHub"
       icon: "github"
       
-    - name: "AWS"
-      icon: "amazonwebservices"
+    - name: "Machine Learning"
+      icon: "FiBrain"
       
-    - name: "Kubernetes"
-      icon: "kubernetes"
+    - name: "Statistical Learning"
+      icon: "FiBarChart"
       
-    - name: "TailwindCSS"
-      icon: "tailwindcss"
-      
-    - name: "GraphQL"
-      icon: "graphql"
+    - name: "Deep Learning"
+      icon: "FiLayers"
 
   soft:
-    - name: "Problem Solving"
-      icon: "FiBox"
-      description: "Analytical thinking and creative solutions"
+    - name: "Research"
+      icon: "FiSearch"
+      description: "Strong research and analytical skills"
       
-    - name: "Team Leadership"
+    - name: "Leadership"
       icon: "FiUsers"
-      description: "Guiding and empowering teams"
+      description: "Led AI Club and research projects"
       
     - name: "Communication"
       icon: "FiMessageSquare"
-      description: "Clear and effective collaboration"
+      description: "Bilingual (Mandarin, English)"
       
     - name: "Project Management"
       icon: "FiTarget"
-      description: "Delivering results on time"
+      description: "Managing research and open-source projects"
       
-    - name: "Time Management"
-      icon: "FiClock"
-      description: "Efficient task prioritization"
+    - name: "Teaching"
+      icon: "FiBook"
+      description: "Teaching experience in AI and ML"
       
-    - name: "Adaptability"
-      icon: "FiAward"
-      description: "Embracing change and learning"
+    - name: "Problem Solving"
+      icon: "FiBox"
+      description: "Complex problem analysis and solution"
       
-    - name: "Agile Mindset"
-      icon: "FiRefreshCw"
-      description: "Iterative improvement focus"
-      
-    - name: "Growth Mindset"
-      icon: "FiTrendingUp"
-      description: "Continuous self-improvement"
+    - name: "Collaboration"
+      icon: "FiGitPullRequest"
+      description: "Open-source contribution experience"
 
 # Site Configuration
 site:
@@ -150,9 +131,9 @@ site:
   text: "#FFFFFF"
   
   meta:
-    title: "Luoshen - Portfolio"
-    description: "Welcome to my personal portfolio showcasing my work and skills in software development"
-    keywords: "software engineer, web developer, full-stack developer, react developer"
+    title: "Peng Chen - ML Engineer & Researcher"
+    description: "Welcome to my portfolio showcasing my work in machine learning, statistical learning, and scientific research"
+    keywords: "machine learning engineer, researcher, data scientist, statistical learning, deep learning, astronomy"
     ogImage: "/og-image.png"
   
   features:
@@ -166,11 +147,14 @@ site:
     - label: "Home"
       path: "/"
       
-    - label: "Skills"
-      path: "#skills"
+    - label: "Research"
+      path: "#research"
       
     - label: "Projects"
       path: "#projects"
+      
+    - label: "Skills"
+      path: "#skills"
       
     - label: "Contact"
       path: "#contact"
@@ -178,4 +162,4 @@ site:
 # GitHub Snake Configuration
 githubSnake:
   enabled: true
-  username: "luorivergoddess"
+  username: "pengchzn"

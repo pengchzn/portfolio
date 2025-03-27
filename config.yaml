@@ -1,10 +1,10 @@
 # Personal Information
 user:
-  name: "Chen Peng"
+  name: "Chen PENG"
   title: "Algorithm Engineer"
-  location: "Shanghai, China"
+  location: "London, Canada"
   email: "pengchzn@gmail.com"
-  bio: "A passionate algorithm engineer and researcher with expertise in statistical learning and AI applications in science"
+  bio: "A passionate algorithm engineer dedicated to crafting elegant solutions through code"
 
 # Social Media Links
 social:
@@ -20,7 +20,6 @@ projects:
     tags: ["Python", "PyTorch", "Machine Learning", "Astronomy"]
     image: "/projects/qrpca.png"
     github: "https://github.com/pengchzn/qrpca"
-    demo: "https://github.com/pengchzn/qrpca/blob/main/demo.ipynb"
     featured: true
 
   - title: "Yonder - Data Denoising Package"
@@ -28,7 +27,6 @@ projects:
     tags: ["Python", "Data Science", "Astronomy", "Signal Processing"]
     image: "/projects/yonder.png"
     github: "https://github.com/pengchzn/yonder"
-    demo: "https://github.com/pengchzn/yonder/blob/main/demo.ipynb"
     featured: true
 
   - title: "Neutrino Movement Reconstruction"
@@ -36,7 +34,6 @@ projects:
     tags: ["Deep Learning", "PyTorch", "Transformers", "Physics"]
     image: "/projects/neutrino.png"
     github: "https://github.com/pengchzn/neutrino-reconstruction"
-    demo: "https://github.com/pengchzn/neutrino-reconstruction/blob/main/demo.ipynb"
     featured: true
 
 # Skills Configuration
@@ -54,58 +51,66 @@ skills:
     - name: "PyTorch"
       icon: "pytorch"
       
-    - name: "Linux"
-      icon: "linux"
+    - name: "Pandas"
+      icon: "pandas"
       
     - name: "NumPy"
       icon: "numpy"
       
-    - name: "Pandas"
-      icon: "pandas"
+    - name: "Docker"
+      icon: "docker"
+      
+    - name: "Linux"
+      icon: "linux"
       
     - name: "Git"
       icon: "git"
       
+    - name: "Matplotlib"
+      icon: "matplotlib"
+      
     - name: "GitHub"
       icon: "github"
       
-    # - name: "Machine Learning"
-    #   icon: "brain"
+    - name: "TensorFlow"
+      icon: "tensorflow"
       
-    # - name: "Statistical Learning"
-    #   icon: "chart"
+    - name: "Keras"
+      icon: "keras"
       
-    # - name: "Deep Learning"
-    #   icon: "layers"
 
   soft:
-    - name: "Research"
-      icon: "search"
-      description: "Strong research and analytical skills"
+    - name: "Problem Solving"
+      icon: "FiBox"
+      description: "Analytical thinking and creative solutions"
       
-    - name: "Leadership"
-      icon: "users"
-      description: "Led AI Club and research projects"
+    - name: "Team Leadership"
+      icon: "FiUsers"
+      description: "Guiding and empowering teams"
       
     - name: "Communication"
-      icon: "message-square"
-      description: "Bilingual (Mandarin, English)"
+      icon: "FiMessageSquare"
+      description: "Clear and effective collaboration"
       
     - name: "Project Management"
-      icon: "target"
-      description: "Managing research and open-source projects"
+      icon: "FiTarget"
+      description: "Delivering results on time"
       
-    - name: "Teaching"
-      icon: "book"
-      description: "Teaching experience in AI and ML"
+    - name: "Time Management"
+      icon: "FiClock"
+      description: "Efficient task prioritization"
       
-    - name: "Problem Solving"
-      icon: "box"
-      description: "Complex problem analysis and solution"
+    - name: "Adaptability"
+      icon: "FiAward"
+      description: "Embracing change and learning"
       
-    - name: "Collaboration"
-      icon: "git-pull-request"
-      description: "Open-source contribution experience"
+    - name: "Agile Mindset"
+      icon: "FiRefreshCw"
+      description: "Iterative improvement focus"
+      
+    - name: "Growth Mindset"
+      icon: "FiTrendingUp"
+      description: "Continuous self-improvement"
 
 # Site Configuration
 site:
@@ -134,9 +139,9 @@ site:
   text: "#FFFFFF"
   
   meta:
-    title: "Peng Chen - ML Engineer & Researcher"
-    description: "Welcome to my portfolio showcasing my work in machine learning, statistical learning, and scientific research"
-    keywords: "machine learning engineer, researcher, data scientist, statistical learning, deep learning, astronomy"
+    title: "Luoshen - Portfolio"
+    description: "Welcome to my personal portfolio showcasing my work and skills in software development"
+    keywords: "software engineer, web developer, full-stack developer, react developer"
     ogImage: "/og-image.png"
   
   features:
@@ -162,4 +167,4 @@ site:
 # GitHub Snake Configuration
 githubSnake:
   enabled: true
-  username: "pengchzn"
+  username: "luorivergoddess"

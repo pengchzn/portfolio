@@ -20,6 +20,7 @@ projects:
     tags: ["Python", "PyTorch", "Machine Learning", "Astronomy"]
     image: "/projects/qrpca.png"
     github: "https://github.com/pengchzn/qrpca"
+    demo: "https://github.com/pengchzn/qrpca"
     featured: true
 
   - title: "Yonder - Data Denoising Package"
@@ -27,6 +28,7 @@ projects:
     tags: ["Python", "Data Science", "Astronomy", "Signal Processing"]
     image: "/projects/yonder.png"
     github: "https://github.com/pengchzn/yonder"
+    demo: "https://github.com/pengchzn/yonder"
     featured: true
 
   - title: "Neutrino Movement Reconstruction"
@@ -34,6 +36,7 @@ projects:
     tags: ["Deep Learning", "PyTorch", "Transformers", "Physics"]
     image: "/projects/neutrino.png"
     github: "https://github.com/pengchzn/neutrino-reconstruction"
+    demo: "https://github.com/pengchzn/neutrino-reconstruction"
     featured: true
 
 # Skills Configuration

@@ -1,10 +1,10 @@
 # Personal Information
 user:
-  name: "Peng Chen"
-  title: "Machine Learning Engineer & Researcher"
-  location: "Shanghai, China"
+  name: "Chen PENG"
+  title: "Algorithm Engineer"
+  location: "London, Canada"
   email: "pengchzn@gmail.com"
-  bio: "A passionate machine learning engineer and researcher with expertise in statistical learning and AI applications in science"
+  bio: "A passionate algorithm engineer dedicated to crafting elegant solutions through code"
 
 # Social Media Links
 social:
@@ -15,25 +15,28 @@ social:
 
 # Featured Projects
 projects:
-  - title: "QRPCA - Fast QR-based PCA Implementation"
-    description: "Developed a PyTorch-enhanced algorithm improving PCA efficiency and accuracy for astronomical data analysis, published in Astronomy and Computing."
-    tags: ["Python", "PyTorch", "Machine Learning", "Astronomy"]
-    image: "/projects/qrpca.png"
-    github: "https://github.com/pengchzn/qrpca"
+  - title: "AI Chatbot Platform"
+    description: "An intelligent conversational AI platform built with Next.js and OpenAI API, featuring real-time responses and conversation history."
+    tags: ["Next.js", "OpenAI", "TypeScript", "Tailwind CSS"]
+    image: "/projects/chatbot.png"
+    github: "https://github.com/yourusername/ai-chatbot"
+    demo: "https://demo-url.com/chatbot"
     featured: true
 
-  - title: "Yonder - Data Denoising Package"
-    description: "A specialized Python package for data denoising and dimensionality reduction in astronomical research, published in Research Notes of the AAS."
-    tags: ["Python", "Data Science", "Astronomy", "Signal Processing"]
-    image: "/projects/yonder.png"
-    github: "https://github.com/pengchzn/yonder"
+  - title: "E-commerce Dashboard"
+    description: "A comprehensive dashboard for managing online store operations, featuring real-time analytics and inventory management."
+    tags: ["React", "Node.js", "MongoDB", "Docker"]
+    image: "/projects/dashboard.png"
+    github: "https://github.com/yourusername/ecommerce-dashboard"
+    demo: "https://demo-url.com/dashboard"
     featured: true
 
-  - title: "Neutrino Movement Reconstruction"
-    description: "Deep learning model using GPT attention blocks and Transformer architecture to reconstruct neutrino movement directions from sensor data."
-    tags: ["Deep Learning", "PyTorch", "Transformers", "Physics"]
-    image: "/projects/neutrino.png"
-    github: "https://github.com/pengchzn/neutrino-reconstruction"
+  - title: "Task Management System"
+    description: "A collaborative task management solution with real-time updates, drag-and-drop functionality, and team collaboration features."
+    tags: ["React", "Firebase", "Material-UI", "TypeScript"]
+    image: "/projects/taskmanager.png"
+    github: "https://github.com/yourusername/task-manager"
+    demo: "https://demo-url.com/tasks"
     featured: true
 
 # Skills Configuration
@@ -51,58 +54,66 @@ skills:
     - name: "PyTorch"
       icon: "pytorch"
       
-    - name: "Linux"
-      icon: "linux"
+    - name: "Pandas"
+      icon: "pandas"
       
     - name: "NumPy"
       icon: "numpy"
       
-    - name: "Pandas"
-      icon: "pandas"
+    - name: "Docker"
+      icon: "docker"
+      
+    - name: "Linux"
+      icon: "linux"
       
     - name: "Git"
       icon: "git"
       
+    - name: "Matplotlib"
+      icon: "matplotlib"
+      
     - name: "GitHub"
       icon: "github"
       
-    # - name: "Machine Learning"
-    #   icon: "brain"
+    - name: "TensorFlow"
+      icon: "tensorflow"
       
-    # - name: "Statistical Learning"
-    #   icon: "chart"
+    - name: "Keras"
+      icon: "keras"
       
-    # - name: "Deep Learning"
-    #   icon: "layers"
 
   soft:
-    - name: "Research"
-      icon: "search"
-      description: "Strong research and analytical skills"
+    - name: "Problem Solving"
+      icon: "FiBox"
+      description: "Analytical thinking and creative solutions"
       
-    - name: "Leadership"
-      icon: "users"
-      description: "Led AI Club and research projects"
+    - name: "Team Leadership"
+      icon: "FiUsers"
+      description: "Guiding and empowering teams"
       
     - name: "Communication"
-      icon: "message-square"
-      description: "Bilingual (Mandarin, English)"
+      icon: "FiMessageSquare"
+      description: "Clear and effective collaboration"
       
     - name: "Project Management"
-      icon: "target"
-      description: "Managing research and open-source projects"
+      icon: "FiTarget"
+      description: "Delivering results on time"
       
-    - name: "Teaching"
-      icon: "book"
-      description: "Teaching experience in AI and ML"
+    - name: "Time Management"
+      icon: "FiClock"
+      description: "Efficient task prioritization"
       
-    - name: "Problem Solving"
-      icon: "box"
-      description: "Complex problem analysis and solution"
+    - name: "Adaptability"
+      icon: "FiAward"
+      description: "Embracing change and learning"
       
-    - name: "Collaboration"
-      icon: "git-pull-request"
-      description: "Open-source contribution experience"
+    - name: "Agile Mindset"
+      icon: "FiRefreshCw"
+      description: "Iterative improvement focus"
+      
+    - name: "Growth Mindset"
+      icon: "FiTrendingUp"
+      description: "Continuous self-improvement"
 
 # Site Configuration
 site:
@@ -131,9 +142,9 @@ site:
   text: "#FFFFFF"
   
   meta:
-    title: "Peng Chen - ML Engineer & Researcher"
-    description: "Welcome to my portfolio showcasing my work in machine learning, statistical learning, and scientific research"
-    keywords: "machine learning engineer, researcher, data scientist, statistical learning, deep learning, astronomy"
+    title: "Luoshen - Portfolio"
+    description: "Welcome to my personal portfolio showcasing my work and skills in software development"
+    keywords: "software engineer, web developer, full-stack developer, react developer"
     ogImage: "/og-image.png"
   
   features:
@@ -147,14 +158,11 @@ site:
     - label: "Home"
       path: "/"
       
-    - label: "Research"
-      path: "#research"
+    - label: "Skills"
+      path: "#skills"
       
     - label: "Projects"
       path: "#projects"
-      
-    - label: "Skills"
-      path: "#skills"
       
     - label: "Contact"
       path: "#contact"
@@ -162,4 +170,4 @@ site:
 # GitHub Snake Configuration
 githubSnake:
   enabled: true
-  username: "pengchzn"
+  username: "luorivergoddess"

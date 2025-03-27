@@ -10,8 +10,8 @@ user:
 social:
   github: "https://github.com/pengchzn"
   linkedin: "https://linkedin.com/in/pengchzn"
-  twitter: "https://twitter.com/pengchzn"
-  instagram: "https://instagram.com/pengchzn"
+  twitter: "https://twitter.com/luorivergoddess"
+  instagram: "https://instagram.com/yourusername"
 
 # Featured Projects
 projects:
@@ -20,7 +20,6 @@ projects:
     tags: ["Python", "PyTorch", "Machine Learning", "Astronomy"]
     image: "/projects/qrpca.png"
     github: "https://github.com/pengchzn/qrpca"
-    demo: "https://demo-url.com/qrpca"
     featured: true
 
   - title: "Yonder - Data Denoising Package"
@@ -28,7 +27,6 @@ projects:
     tags: ["Python", "Data Science", "Astronomy", "Signal Processing"]
     image: "/projects/yonder.png"
     github: "https://github.com/pengchzn/yonder"
-    demo: "https://demo-url.com/yonder"
     featured: true
 
   - title: "Neutrino Movement Reconstruction"
@@ -36,7 +34,6 @@ projects:
     tags: ["Deep Learning", "PyTorch", "Transformers", "Physics"]
     image: "/projects/neutrino.png"
     github: "https://github.com/pengchzn/neutrino-reconstruction"
-    demo: "https://demo-url.com/neutrino"
     featured: true
 
 # Skills Configuration
@@ -70,41 +67,41 @@ skills:
       icon: "github"
       
     - name: "Machine Learning"
-      icon: "FiBrain"
+      icon: "brain"
       
     - name: "Statistical Learning"
-      icon: "FiBarChart"
+      icon: "chart"
       
     - name: "Deep Learning"
-      icon: "FiLayers"
+      icon: "layers"
 
   soft:
     - name: "Research"
-      icon: "FiSearch"
+      icon: "search"
       description: "Strong research and analytical skills"
       
     - name: "Leadership"
-      icon: "FiUsers"
+      icon: "users"
       description: "Led AI Club and research projects"
       
     - name: "Communication"
-      icon: "FiMessageSquare"
+      icon: "message-square"
       description: "Bilingual (Mandarin, English)"
       
     - name: "Project Management"
-      icon: "FiTarget"
+      icon: "target"
       description: "Managing research and open-source projects"
       
     - name: "Teaching"
-      icon: "FiBook"
+      icon: "book"
       description: "Teaching experience in AI and ML"
       
     - name: "Problem Solving"
-      icon: "FiBox"
+      icon: "box"
       description: "Complex problem analysis and solution"
       
     - name: "Collaboration"
-      icon: "FiGitPullRequest"
+      icon: "git-pull-request"
       description: "Open-source contribution experience"
 
 # Site Configuration
